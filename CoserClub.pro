@@ -15,8 +15,7 @@ SOURCES += \
 HEADERS += \
     cmainwindow.h
 
-TRANSLATIONS += \
-    CoserClub_zh_CN.ts
+TRANSLATIONS +=
 CONFIG += lrelease
 CONFIG += embed_translations
 
@@ -24,3 +23,7 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    .gitignore \
+    README.md
