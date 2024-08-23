@@ -2,6 +2,7 @@
 #define CMAINWINDOW_H
 
 #include <QMainWindow>
+#include <cloginwid.h>
 
 class CMainWindow : public QMainWindow
 {
