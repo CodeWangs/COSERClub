@@ -10,12 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     cloginwid.cpp \
+    cregisterwid.cpp \
     main.cpp \
     cmainwindow.cpp
 
 HEADERS += \
     cloginwid.h \
-    cmainwindow.h
+    cmainwindow.h \
+    cregisterwid.h
 
 TRANSLATIONS +=
 CONFIG += lrelease

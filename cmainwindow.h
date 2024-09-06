@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <cloginwid.h>
+#include <cregisterwid.h>
 
 class CMainWindow : public QMainWindow
 {

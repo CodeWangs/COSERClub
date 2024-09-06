@@ -32,8 +32,12 @@ public:
 private:
     void initLoginWid(void);
     void connectSignalSlot(void);
+    void checkInput(void);
 public:
 private slots:
+    void clickedLogin_slot(void);
+    void clickedRegister_slot(void);
+    void clickedForgetPass_slot(void);
 public slots:
 signals:
 };

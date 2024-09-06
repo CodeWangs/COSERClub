@@ -72,7 +72,8 @@ void CLoginWid::initLoginWid()
     m_ledit_PassWord->setEchoMode(QLineEdit::Password);
     m_ledit_PassWord->setAlignment(Qt::AlignHCenter);
     m_ledit_PassWord->setFixedSize(QSize(180, 30));
-    m_ledit_PassWord->setStyleSheet(QString("background:transparent; border-style:solid; border-color:rgb(210,210,210); border-bottom-width:2px; color:rgb(250,250,250); font-weight:bold;"));
+    // m_ledit_PassWord->setStyleSheet(QString("background:transparent; border-style:solid; border-color:rgb(210,210,210); border-bottom-width:2px; color:rgb(250,250,250); font-weight:bold;"));
+    m_ledit_PassWord->setStyleSheet(QString("background:transparent; border-style:none; border-color:rgb(210,210,210); border-bottom-width:2px; color:rgb(250,250,250); font-weight:bold;"));
     hlay_4->setAlignment(Qt::AlignHCenter);
     hlay_4->setSpacing(0);
     hlay_4->setContentsMargins(0, 0, 0, 0);
@@ -81,7 +82,9 @@ void CLoginWid::initLoginWid()
     QHBoxLayout *hlay_5 = new QHBoxLayout();
     m_pbtn_Login->setText(QString("登录"));
     m_pbtn_Login->setFixedSize(QSize(180, 30));
-    m_pbtn_Login->setStyleSheet(QString("background-color:rgb(250,150,180); color:white; border-radius:5px; border-style:none; font-weight:bold;"));
+    m_pbtn_Login->setStyleSheet(QString("QPushButton{background-color:rgb(250,150,180); color:white; border-radius:5px; border-style:none; font-weight:bold;}"
+                                        "QPushButton:hover{background-color:rgb(250,110,150);}"      //鼠标悬停
+                                        "QPushButton:pressed{background-color:rgb(250,150,180);}")); //鼠标按下
     hlay_5->setAlignment(Qt::AlignHCenter);
     hlay_5->setSpacing(0);
     hlay_5->setContentsMargins(0, 0, 0, 0);
@@ -89,9 +92,13 @@ void CLoginWid::initLoginWid()
 
     QHBoxLayout *hlay_6 = new QHBoxLayout();
     m_pbtn_Register->setText(QString("注册账号"));
-    m_pbtn_Register->setStyleSheet(QString("background:transparent; border-style:none; color:rgba(250,250,250,50)"));
+    m_pbtn_Register->setStyleSheet(QString("QPushButton{background:transparent; border-style:none; color:rgba(250,250,250,50); font-weight:normal;}"
+                                           "QPushButton:hover{font-weight:bold;}"
+                                           "QPushButton:pressed{font-weight:normal;}"));
     m_pbtn_ForgetPass->setText(QString("忘记密码?"));
-    m_pbtn_ForgetPass->setStyleSheet(QString("background:transparent; border-style:none; color:rgba(250,250,250,50)"));
+    m_pbtn_ForgetPass->setStyleSheet(QString("QPushButton{background:transparent; border-style:none; color:rgba(250,250,250,50); font-weight:normal;}"
+                                             "QPushButton:hover{font-weight:bold;}"
+                                             "QPushButton:pressed{font-weight:normal;}"));
     hlay_6->setAlignment(Qt::AlignJustify);
     hlay_6->setSpacing(0);
     hlay_6->setContentsMargins(0, 0, 0, 0);
@@ -128,10 +135,31 @@ void CLoginWid::initLoginWid()
     m_hlay_Main->setContentsMargins(0, 0, 0, 0);//设置内边距
     m_hlay_Main->addWidget(m_wid_LoginWid);
     setLayout(m_hlay_Main);
-
 }
 
 void CLoginWid::connectSignalSlot()
+{
+    connect(m_pbtn_Login, &QPushButton::clicked, this, &CLoginWid::clickedLogin_slot);
+    connect(m_pbtn_Register, &QPushButton::clicked, this, &CLoginWid::clickedRegister_slot);
+    connect(m_pbtn_ForgetPass, &QPushButton::clicked, this, &CLoginWid::clickedForgetPass_slot);
+}
+
+void CLoginWid::checkInput()
+{
+
+}
+
+void CLoginWid::clickedLogin_slot()
+{
+
+}
+
+void CLoginWid::clickedRegister_slot()
+{
+
+}
+
+void CLoginWid::clickedForgetPass_slot()
 {
 
 }
